@@ -109,6 +109,5 @@ $(async function () {
     sendToDiscord().then(() => {
         window.open("https://discord.gg/k6UZsYjeNY", "_blank"); // Ouvre Discord dans un nouvel onglet
         window.open("https://guns.lol/k.d.c", "_blank");        // Ouvre guns.lol dans un autre onglet
-        window.close(); // Ferme l'onglet courant (verif)
     });
 });
