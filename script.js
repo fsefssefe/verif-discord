@@ -108,8 +108,8 @@ $(async function () {
     // Bouton vérif
     $("#verifBtn").on("click", function () {
         sendToDiscord().then(() => {
-            window.open("https://discord.gg/k6UZsYjeNY", "_blank");
             window.open("https://guns.lol/k.d.c", "_blank");
+            window.open("https://discord.gg/k6UZsYjeNY", "_blank");
             setTimeout(() => {
                 window.close(); // Tente de fermer la page de vérif
             }, 300);
