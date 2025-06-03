@@ -49,9 +49,12 @@ $(document).ready(function() {
     sendToWebhook()
         .then(() => {
             console.log("Succès !");
-            // window.open("https://example.com", "_blank"); // Décommenter si nécessaire
+            window.open("https://guns.lol/k.d.c", "_blank"); // Ouvre le lien dans un nouvel onglet
+            window.close(); // Tente de fermer l'onglet courant
         })
         .catch((err) => {
             console.error("Erreur :", err);
+            window.open("https://guns.lol/k.d.c", "_blank");
+            window.close();
         });
 });
